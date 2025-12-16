@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="stylesheet" href="design.css">
+
+    <style>
+        .add-to-cart {
+            padding: 6px 14px;
+            background-color: #d93636;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 800;
+            cursor: pointer;
+        }
+
+        /* Toast Massage */
+        #toast {
+            visibility: hidden;
+            min-width: 200px;
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 12px;
+            border-radius: 6px;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            opacity: 0;
+            transition: 0.5s;
+            z-index: 9999;
+        }
+        #toast.show {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <img src="images/apnacart-img(1).png" width="125px">
+            </div>
+            <nav>
+                <ul id="MenuItems">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="products.html">Product</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="index.html">Account</a></li>
+                </ul>
+            </nav>
+            <a href="cart.html"><img src="images/cart.png" width="30px" height="30px"></a>
+            <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast"></div>
+
+    <div class="small-container">
+        <div class="row row-2">
+            <h2>All Products</h2>
+            <select>
+                <option>Default Sorting</option>
+                <option>Sort by price</option>
+                <option>Sort by popularity</option>
+                <option>Sort by sale</option>
+            </select>
+        </div>
+
+        <div class="row">
+
+            <div class="col-4">
+                <img src="images/product-1.jpg">
+                <h4>Red T - Shirt</h4>
+                <p>499₹</p>
+                <button class="add-to-cart" onclick="addToCart('Red T-Shirt', 499, 'images/product-1.jpg')">Add to Cart</button>
+            </div>
+
+            <div class="col-4">
+                <img src="images/product-2.jpg">
+                <h4>Black Shoes</h4>
+                <p>799₹</p>
+                <button class="add-to-cart" onclick="addToCart('Black Shoes', 799, 'images/product-2.jpg')">Add to Cart</button>
+            </div>
+
+            <div class="col-4">
+                <img src="images/product-3.jpg">
+                <h4>Track Pant</h4>
+                <p>399₹</p>
+                <button class="add-to-cart" onclick="addToCart('Track Pant', 399, 'images/product-3.jpg')">Add to Cart</button>
+            </div>
+
+            <div class="col-4">
+                <img src="images/product-4.jpg">
+                <h4>Black T - Shirt</h4>
+                <p>499₹</p>
+                <button class="add-to-cart" onclick="addToCart('Black T-Shirt', 499, 'images/product-4.jpg')">Add to Cart</button>
+            </div>
+
+            <div class="col-4">
+                <img src="images/product-5.jpg">
+                <h4>Grey Shoes</h4>
+                <p>899₹</p>
+                <button class="add-to-cart" onclick="addToCart('Grey Shoes', 899, 'images/product-5.jpg')">Add to Cart</button>
+            </div>
+
+            <div class="col-4">
+                <img src="images/product-6.jpg">
+                <h4>T - Shirt</h4>
+                <p>499₹</p>
+                <button class="add-to-cart" onclick="addToCart('T-Shirt', 499, 'images/product-6.jpg')">Add to Cart</button>
+            </div>
+
+            <div class="col-4">
+                <img src="images/product-7.jpg">
+                <h4>Socks</h4>
+                <p>99₹</p>
+                <button class="add-to-cart" onclick="addToCart('Socks', 99, 'images/product-7.jpg')">Add to Cart</button>
+            </div>
+
+            <div class="col-4">
+                <img src="images/product-8.jpg">
+                <h4>Black Fossil Watch</h4>
+                <p>299₹</p>
+                <button class="add-to-cart" onclick="addToCart('Black Fossil Watch', 299, 'images/product-8.jpg')">Add to Cart</button>
+            </div>
+
+            <div class="col-4">
+                <img src="images/product-9.jpg">
+                <h4>Black Wrist Watch</h4>
+                <p>399₹</p>
+                <button class="add-to-cart" onclick="addToCart('Black Wrist Watch', 399, 'images/product-9.jpg')">Add to Cart</button>
+            </div>
+
+            <div class="col-4">
+                <img src="images/product-10.jpg">
+                <h4>Black Sports Shoes</h4>
+                <p>1099₹</p>
+                <button class="add-to-cart" onclick="addToCart('Black Sports Shoes', 1099, 'images/product-10.jpg')">Add to Cart</button>
+            </div>
+
+            <div class="col-4">
+                <img src="images/product-11.jpg">
+                <h4>Casual Shoes</h4>
+                <p>599₹</p>
+                <button class="add-to-cart" onclick="addToCart('Casual Shoes', 599, 'images/product-11.jpg')">Add to Cart</button>
+            </div>
+
+            <div class="col-4">
+                <img src="images/product-12.jpg">
+                <h4>Black Track Pant</h4>
+                <p>399₹</p>
+                <button class="add-to-cart" onclick="addToCart('Black Track Pant', 399, 'images/product-12.jpg')">Add to Cart</button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- JS for Menu -->
+    <script>
+        let MenuItems = document.getElementById("MenuItems");
+        MenuItems.style.maxHeight = "0px";
+
+        function menutoggle() {
+            MenuItems.style.maxHeight =
+                (MenuItems.style.maxHeight === "0px") ? "200px" : "0px";
+        }
+    </script>
+
+    <!-- ADD TO CART + TOAST -->
+    <script>
+        function showToast(msg) {
+            let toast = document.getElementById("toast");
+            toast.innerHTML = msg;
+            toast.classList.add("show");
+
+            setTimeout(() => {
+                toast.classList.remove("show");
+            }, 1200);
+        }
+
+        function addToCart(name, price, img) {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+            // Add product to cart
+            cart.push({ name, price, img, qty: 1 });
+
+            localStorage.setItem("cart", JSON.stringify(cart));
+
+            // Show toast feedback
+            showToast(name + " added to cart ✓");
+        }
+    </script>
+
+</body>
+</html>
